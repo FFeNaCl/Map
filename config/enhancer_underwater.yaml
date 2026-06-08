@@ -1,0 +1,19 @@
+image_enhancer_cpp:
+  ros__parameters:
+    input_topic: /image_raw
+    output_topic: /image_enhanced
+    debug_topic: /image_enhanced_debug
+    publish_debug_view: true
+
+    use_red_compensation: true
+    red_gain_limit: 2.5
+    use_gray_world: true
+    use_clahe: true
+    clahe_clip_limit: 3.0
+    clahe_tile_size: 8
+    use_unsharp_mask: false
+    unsharp_amount: 0.35
+
+    use_undistort: false
+    camera_matrix: []
+    distortion_coeffs: []

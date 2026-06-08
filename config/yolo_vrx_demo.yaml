@@ -1,0 +1,22 @@
+yolo_dataset_player:
+  ros__parameters:
+    # Optional: fill this only after restoring a YOLO-format dataset.
+    dataset_root: ""
+    split: valid
+    fps: 2.0
+    image_topic: /image_raw
+    label_topic: /dataset/labels
+    frame_id: vrx_sim_camera
+    loop: true
+
+yolo_detector:
+  ros__parameters:
+    input_topic: /image_enhanced
+    annotated_topic: /yolo/annotated
+    detections_topic: /yolo/detections
+    label_topic: /dataset/labels
+    dataset_root: ""
+    model_path: /home/hu/underwater_slam_ws/models/best.onnx
+    confidence_threshold: 0.25
+    allow_label_replay: false
+    frame_title: "Underwater YOLO detection"
